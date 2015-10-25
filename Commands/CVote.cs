@@ -32,8 +32,8 @@ namespace CallVoteCommands
 			}
 			else if (command[0].ToString().ToLower() == "day" && cPlayer.HasPermission("callvote.day") && CallVote.Plugin.Instance.voteInProgress == false && CallVote.Plugin.Instance.dayVoteInCooldown == false)
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer.CharacterName + " has called a vote to make it daytime. You have "
-					+ CallVote.Plugin.Instance.Configuration.Instance.dayVoteTimer + " seconds to type </cvote yes> to vote.", Color.yellow);
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer.CharacterName + " ได้เรียก การลงคะแนนเสียง ที่จะทำให้มัน ในเวลากลางวัน คุณมี "
+					+ CallVote.Plugin.Instance.Configuration.Instance.dayVoteTimer + " วินาทีที่จะ พิมพ์ </cvote yes> การออกเสียงลงคะแนน ", Color.yellow);
 				CallVote.Plugin.Instance.voteInProgress = true;
 
 				CallVote.Utility.initiateDayVote();
@@ -50,33 +50,33 @@ namespace CallVoteCommands
 				}
 				else if (CallVote.Plugin.Instance.voteTracker.ContainsKey(cPlayer.CSteamID))
 				{
-					Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "You have already voted!", Color.yellow);
+					Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "คุณทำการให้คะแนนแล้ว!", Color.yellow);
 				}
 			}
 			else if (command[0].ToString().ToLower() == "day" && !cPlayer.HasPermission("callvote.day"))
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "You do not have permission to start a day vote!", Color.red);
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "คุณไม่ ได้รับอนุญาตให้ เริ่มต้น การลงคะแนนเสียง วัน!", Color.red);
 			}
 			else if (command[0].ToString().ToLower() == "day" && CallVote.Plugin.Instance.voteInProgress == true)
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "Only one vote may be called at a time.", Color.yellow);
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "เพียง หนึ่งเสียง อาจจะเรียก ได้ตลอดเวลา", Color.yellow);
 			}
 			else if (command[0].ToString().ToLower() == "day" && CallVote.Plugin.Instance.dayVoteInCooldown == true)
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "A day vote may only be called every " + CallVote.Plugin.Instance.Configuration.Instance.dayVoteCooldown
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "การออกเสียงลงคะแนน วันที่ อาจ จะเรียกได้ว่า ทุกคน เท่านั้น " + CallVote.Plugin.Instance.Configuration.Instance.dayVoteCooldown
 					+ " seconds.", Color.yellow);
 			}
 			else if (command[0].ToString().ToLower() == "yes" && !cPlayer.HasPermission("callvote.vote"))
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "You do not have permission to vote!", Color.red);
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "คุณไม่ ได้รับอนุญาตให้ ลงคะแนน !", Color.red);
 			}
 			else if (command[0].ToString().ToLower() == "yes" && CallVote.Plugin.Instance.voteInProgress == false)
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "There are no votes currently active.", Color.red);
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "มี คะแนนเสียง ไม่ ใช้งาน ขณะนี้", Color.red);
 			}
 			else
 			{
-				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "Invalid command parameter.", Color.yellow);
+				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer, "คำสั่ง ที่ไม่ถูกต้อง พารามิเตอร์", Color.yellow);
 			}
 		}
 		public bool AllowFromConsole
@@ -107,7 +107,7 @@ namespace CallVoteCommands
 		}
 		public string Help
 		{
-			get { return "Enter vote node to start a vote. Enter yes or no to vote."; }
+			get { return "ใส่ โหนด ลงคะแนนเสียง ที่จะเริ่มต้น การลงคะแนนเสียง ใส่ ใช่หรือไม่ ออกเสียงลงคะแนน"; }
 		}
 		public List<string> Permissions
 		{
