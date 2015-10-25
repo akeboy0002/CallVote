@@ -33,7 +33,7 @@ namespace CallVoteCommands
 			else if (command[0].ToString().ToLower() == "day" && cPlayer.HasPermission("callvote.day") && CallVote.Plugin.Instance.voteInProgress == false && CallVote.Plugin.Instance.dayVoteInCooldown == false)
 			{
 				Rocket.Unturned.Chat.UnturnedChat.Say (cPlayer.CharacterName + " has called a vote to make it daytime. You have "
-					+ CallVote.Plugin.Instance.Configuration.Instance.dayVoteTimer + " seconds to type </cvote yes> to vote.", Color.yellow);
+					+ CallVote.Plugin.Instance.Configuration.Instance.dayVoteTimer + " วินาทีที่จะ พิมพ์  </cvote yes> การออกเสียงลงคะแนน", Color.yellow);
 				CallVote.Plugin.Instance.voteInProgress = true;
 
 				CallVote.Utility.initiateDayVote();
